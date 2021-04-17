@@ -224,7 +224,9 @@ echo "=================================="
 echo "export path: ${EXPORT_PATH}"
 echo "=================================="
 
-bootstrap_config
+if [ ! -f ${GANESHA_CONFIG} ]; then
+   bootstrap_config
+fi
 bootstrap_idmap
 init_rpc
 init_dbus
